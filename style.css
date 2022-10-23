@@ -1,0 +1,161 @@
+:root {
+    --darkviolet: hsl(278, 68%, 11%);
+    --lightviolet: hsl(270, 3%, 87%);
+    --mediumviolet: hsl(279, 6%, 55%);
+}
+
+html {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+
+
+.right-background {
+    height: 100vh;
+    width: 100%;
+}
+
+.left-background {
+    height: 100vh;
+    width: 100%;
+    background-image: url("images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+}
+
+.cardfront {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    display: inline-block;
+}
+
+.cardfront #card-logo {
+    position: absolute;
+    top: 7%;
+    right: 75%;
+}
+
+.cardfront #cardnumber {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    font-weight: 550;
+    letter-spacing: 5px;
+    color: floralwhite;
+    font-size: 25px;
+}
+
+.cardfront #cardholder-name {
+    position: absolute;
+    bottom: 7.5%;
+    left: 8%;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: floralwhite;
+}
+
+.cardfront #expire-date {
+    display: flex;
+    position: absolute;
+    right: 10%;
+    bottom: 7.5%;
+    font-size: 16px;
+    color: floralwhite;
+}
+
+.cardback {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+}
+
+.cardback #CVCcard {
+    position: absolute;
+    top: 38%;
+    right: 15%;
+    color: floralwhite;
+}
+
+.inputfields {
+    position: absolute;
+    right: 17%;
+    top: 32%;
+}
+
+.inputfields input:not(#MMfield, #YYfield, #CVCfield) {
+    width: 20vw;
+    height: 5vh;
+}
+
+.vierekkain {
+    display: flex;
+}
+
+#CVC {
+    padding-left: 1.2rem;
+}
+
+.expdateandcvc {
+    display: flex;
+}
+
+.inputfields #MMfield, #YYfield {
+    display: flex;
+    margin: 0;
+    width: 3vw;
+    height: 5vh;
+}
+
+#YYfield {
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
+.inputfields #CVCfield {
+    width: 10.5vw;
+}
+
+.inputfields input {
+    border-radius: 0.5rem;
+    border: solid 1px var(--mediumviolet);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding-left: 20px;
+}
+
+.inputfields input::placeholder {
+    opacity: 50%;
+}
+
+input:focus {
+    outline: solid 1px var(--darkviolet);
+}
+
+.inputfields h2 {
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin: 8px 0 8px 0;
+}
+
+
+#button {
+    position: absolute;
+    right: 18.1%;
+    bottom: 30%;
+    width: 20vw;
+    height: 5vh;
+    border-radius: 0.5rem;
+
+    background-color: var(--darkviolet);
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+    color: floralwhite;
+    border: none;
+}
