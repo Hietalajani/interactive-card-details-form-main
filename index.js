@@ -1,9 +1,7 @@
-
-
 function replacecardholder() {
     const placeholder = document.getElementById('cardholderfield').placeholder.slice(5)
     const inputtext = document.getElementById('cardholderfield').value
-    document.getElementById('cardholder-name').innerHTML = inputtext
+    document.getElementById('cardholder-name').innerHTML = inputtext.toUpperCase()
     if (inputtext.length === 0) {
         document.getElementById('cardholder-name').innerHTML = placeholder
     }
@@ -17,6 +15,7 @@ function replacecardnumber() {
         console.log(inputtext);
         }
 
+    document.getElementById('cardnumberfield').value = inputtext
     document.getElementById('cardnumber').innerHTML = inputtext
     if (inputtext.length === 0) {
         document.getElementById('cardnumber').innerHTML = "0000 0000 0000 0000"
@@ -48,7 +47,37 @@ function replaceCVC() {
 }
 
 function validation() {
+    const inputname = document.getElementById('cardholderfield').value
+    const cardnumber = document.getElementById('cardnumberfield').value
+    let hasnumber = /\d/;
 
+    if (hasnumber.test(inputname) === true) {
+        console.log('Menin if lauseeseen')
+        document.getElementById('cardholdererror').innerHTML = "* Only letters please."
+    }
 
+    if (cardnumber.length < 16) {
+        console.log('Menin if lauseeseen cardnumbererror')
+        document.getElementById('cardnumbererror').innerHTML = "* Please provide a valid credit card number."
+    }
+
+    if (hasnumber.test(inputname) === false && cardnumber.length > 16) {
+        const inputfields = document.getElementById('inputfields')
+        const hidden = document.getElementById('hidden')
+
+        console.log(inputfields)
+
+        inputfields.className = 'piilossa'
+        hidden.className = 'nakyva'
+    }
 }
 
+function cont() {
+    const inputfields = document.getElementById('inputfields')
+        const hidden = document.getElementById('hidden')
+
+        console.log(inputfields)
+
+        inputfields.className = 'inputfields'
+        hidden.className = 'hidden'
+}

@@ -32,6 +32,8 @@ body {
     top: 20%;
     left: 15%;
     display: inline-block;
+    max-width: 447px;
+    max-height: 245px;
 }
 
 .cardfront #card-logo {
@@ -81,10 +83,17 @@ body {
     color: floralwhite;
 }
 
+
+
 .inputfields {
+    display: block;
     position: absolute;
     right: 17%;
     top: 32%;
+}
+
+.piilossa {
+    display: none;
 }
 
 .inputfields input:not(#MMfield, #YYfield, #CVCfield) {
@@ -145,12 +154,55 @@ input:focus {
 
 
 #button {
+    background-color: var(--darkviolet);
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+    color: floralwhite;
+    border: none;
+
+    margin-top: 1rem;
+}
+
+.error {
+    display: block;
+    color: red;
+    margin: 2px 0 0 0;
+}
+
+.errorit {
+    display: inline-block;
+}
+
+.confirmed {
     position: absolute;
-    right: 18.1%;
-    bottom: 30%;
+    right: 25%;
+    top: 35%;
+}
+
+.thankyoutext {
+    position: absolute;
+    text-align: center;
+    right: 20%;
+    bottom: 40%;
+}
+
+.thankyoutext p {
+    color: gray;
+}
+
+.continuebutton {
+    position: absolute;
+    right: 17%;
+    bottom: 34%;
+}
+
+.continuebutton #continue {
+
+
+    box-sizing: border-box;
     width: 20vw;
     height: 5vh;
-    border-radius: 0.5rem;
 
     background-color: var(--darkviolet);
 
@@ -158,4 +210,31 @@ input:focus {
     font-size: 18px;
     color: floralwhite;
     border: none;
+
+    margin-top: 1rem;
+
+    border-radius: 0.5rem;
+
 }
+
+.hidden {
+    display: none;
+}
+
+.nakyva {
+    display: block;
+}
+
+@media screen and (max-width: 1030px) {
+
+    .left-background {
+        height: 30vh;
+        width: 100%;
+    }
+
+    .cardfront {
+        position: relative;
+    }
+
+
+    }

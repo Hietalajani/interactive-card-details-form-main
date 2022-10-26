@@ -40,11 +40,13 @@
       <p id="CVCcard">000</p>
     </div>
     <form>
-      <div class="inputfields">
+      <div class="inputfields" id="inputfields">
         <label><h2>CARDHOLDER NAME</h2></label>
         <input type="text" id="cardholderfield" placeholder="e.g. Jane Appleseed" oninput="replacecardholder()" maxlength="28" required>
+        <span class="error" id="cardholdererror"></span>
         <h2>CARD NUMBER</h2>
           <input type="text" id="cardnumberfield" placeholder="e.g. 1234 5678 9123 0000" oninput="replacecardnumber()" maxlength="19">
+          <span class="error" id="cardnumbererror"></span>
         <div class="vierekkain">
           <h2>EXP. DATE (MM/YY)</h2>
           <h2 id="CVC">CVC</h2>
@@ -53,12 +55,32 @@
           <input type="number" id="MMfield" placeholder="MM" oninput="replaceMM()" required min="01" max="12"  onkeypress="if(this.value.length==2) return false;">
           <input type="number" id="YYfield" placeholder="YY" oninput="replaceYY()" required  onkeypress="if(this.value.length==2) return false;">
           <input type="number" id="CVCfield" placeholder="e.g. 123" oninput="replaceCVC()" required onkeypress="if(this.value.length==3) return false;">
+
         </div>
-      </div>
-      <div class="confirm">
-        <input id="button" type="submit" value="Confirm" onclick="validation()">
+        <div class="confirm">
+          <input id="button" type="button" value="Confirm" onclick="validation()">
+        </div>
+        <div class="errorit">
+          <span class="error" id="mmerror"></span>
+          <span class="error" id="yyerror"></span>
+          <span class="error" id="cvcerror"></span>
+        </div>
+
       </div>
     </form>
+    <div class="hidden" id="hidden">
+      <div class="confirmed">
+        <img id="complete" src="/images/icon-complete.svg"/>
+      </div>
+      <div class="thankyoutext">
+        <h1>THANK YOU!</h1>
+        <p>We've added your card details</p>
+      </div>
+      <div class="continuebutton">
+        <button type="button" value="Continue" id="continue" onclick="cont()">Continue</button>
+      </div>
+    </div>
+
   </div>
 </div>
 
